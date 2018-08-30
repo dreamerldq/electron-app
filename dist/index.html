@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
+    <script>
+        (function () {
+            let a = document.documentElement,
+                e;
+            c();
+            a.setAttribute("data-dpr", window.devicePixelRatio);
+            window.addEventListener("resize", b, false);
+            window.addEventListener("pageshow", function (f) {
+                f.persisted && b()
+            }, false);
+
+            function b() {
+                clearTimeout(e);
+                e = setTimeout(c, 300)
+            }
+
+            function c() {
+                var f = a.getBoundingClientRect().width;
+                if (f <= 750) {
+                    window.rem = a.getBoundingClientRect().width / 10
+                } else {
+                    window.rem = 75;
+                }
+                a.style.fontSize = window.rem + "px"
+            }
+        })();
+    </script>
+    <title>花卷小说</title>
+<link href="/index.css" rel="stylesheet"></head>
+
+<body>
+    <div style="width: 10rem; box-sizing: border-box; overflow-x: hidden;" id="app"></div>
+<script type="text/javascript" src="./index_bundle.js"></script></body>
+
+</html>
